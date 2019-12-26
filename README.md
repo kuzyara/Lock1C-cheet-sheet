@@ -1,4 +1,7 @@
 # Шпаргалка по блокировкам 1С
+
+*Задача: наложение правильных блокировок в рег. задании автоматического создания расх. ордеров по реализациям*
+
 * в репозитории 1С (https://github.com/1CEnterprise/MSQL-for-1C)
 * в картинках (https://infostart.ru/public/629017/)
 ![alt text](https://github.com/kuzyara/Locks-cheet-sheet/blob/master/Блокировки.jpg)
