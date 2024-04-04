@@ -54,6 +54,16 @@
 Чтение наборов записей регистров через объектную модель приводит к наложению управляемой блокировки.<br />
 _Пояснение: происходит неявная транзакция_
 
+```bsl
+Набор = РегистрыСведений.ВсеОбновленияНовостей.СоздатьНаборЗаписей();
+Набор.Отбор.ВидОбновления.Установить("Получение новостей");
+Набор.Прочитать();
+```
+В ТЖ этот код выглядит так:
+> 06:48.552025,__SDBL__,5,process=rphost,p:processName=erp_demo_mssql,OSThread=5976,t:clientID=128,t:applicationName=1CV8C,t:computerName=er232,t:connectID=10,SessionID=5,Usr=Администратор,AppID=1CV8C,DBMS=DBMSSQL,DataBase=.\erp_demo_mssql,Trans=1,__Func=BeginTransaction__,Context='Форма.Вызов : Набор.Прочитать();'
+> 06:48.568008,__TLOCK__,5,process=rphost,p:processName=erp_demo_mssql,OSThread=5976,t:clientID=128,t:applicationName=1CV8C,t:computerName=er232,t:connectID=10,SessionID=5,Usr=Администратор,AppID=1CV8C,DBMS=DBMSSQL,DataBase=.\erp_demo_mssql,Regions=InfoRg42238.DIMS,__Locks='InfoRg42238.DIMS Shared Fld42239="Получение новостей"'__,WaitConnections=,Context='Форма.Вызов : Набор.Прочитать();'
+> 06:48.568015_15991,__SDBL__,4,process=rphost,p:processName=erp_demo_mssql,OSThread=5976,t:clientID=128,t:applicationName=1CV8C,t:computerName=er232,t:connectID=10,SessionID=5,Usr=Администратор,AppID=1CV8C,DBMS=DBMSSQL,DataBase=.\erp_demo_mssql,Trans=0,Func=Transaction,__Func=CommitTransaction__,Context='Форма.Вызов : Набор.Прочитать();'
+
 Получение прикладного объекта через `ПолучитьОбъект()` всегда происходит с использованием объектной блокировки.<br />
 _Пояснение: здесь имеется ввиду оптимистическая объектная блокировка, подробнее см. [Какие бывают блокировки](#какие-бывают-блокировки)_
 
