@@ -2,6 +2,7 @@
 
 *Задача: наложение блокировок на регистр сведений*
 
+см. также: [Прусаков Никита про Чтение и запись наборов записей.](Прусаков%20Никита%20про%201С.md)
 * в репозитории 1С (https://github.com/1CEnterprise/MSQL-for-1C)
 * в картинках (https://infostart.ru/public/629017/)
 ![alt text](https://github.com/kuzyara/Locks-cheet-sheet/blob/master/Блокировки.jpg)
